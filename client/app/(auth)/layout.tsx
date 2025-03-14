@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Image from "next/image";
 
 type Props = {}
 
-const Layout = (props: Props) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>Layout</div>
+    <div className='flex min-h-screen'>
+      {children}
+    </div>
   )
 }
 
