@@ -11,8 +11,8 @@ const config: Config = {
   	extend: {
   		colors: {
   			brand: {
-  				'100': '#EA6365',
-  				DEFAULT: '#FA7275'
+  				'100': '#5c5cf3',
+  				DEFAULT: '#7876ff'
   			},
   			red: '#FF7474',
   			error: '#b80000',
