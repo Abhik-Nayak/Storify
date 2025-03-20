@@ -20,6 +20,7 @@ import {
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { sendEmailOTP, verifySecret } from '@/lib/actions/user.actions';
 
 
 const OTPModal = ({
@@ -29,6 +30,7 @@ const OTPModal = ({
     accountId: string;
     email: string;
 }) => {
+    const router = useRouter();
     const [isOpen, setIsOpen] = useState(true);
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -37,18 +39,17 @@ const OTPModal = ({
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setIsLoading(true);
-
-        console.log({ accountId, password });
-
         try {
-            // const sessionId = await verifySecret({ accountId, password });
-
-            // console.log({ sessionId });
-
-            // if (sessionId) router.push("/");
+            const sessionId = await verifySecret({ accountId, password });
+            if (sessionId) router.push("/");
         } catch (error) {
             console.log("Failed to verify OTP", error);
         }
+    }
+
+    const handleResendOtp = async () => {
+        console.log("hit")
+        await sendEmailOTP({ email })
     }
 
     return (
@@ -103,7 +104,7 @@ const OTPModal = ({
                                 type="button"
                                 variant="link"
                                 className="pl-1 text-brand"
-                                onClick={() => ""}
+                                onClick={() => handleResendOtp()}
                             >
                                 Click to resend
                             </Button>
