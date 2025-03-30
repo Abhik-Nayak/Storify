@@ -1,6 +1,26 @@
-# React Admin Dashboard
+# Lama Dev School Management Dashboard
 
-Build a COMPLETE React Admin Dashboard App | React, Material UI, Data Grid, Light & Dark Mode
+## Getting Started
 
+First, run the development server:
 
-For all related questions and discussions about this project, check out the discord: https://discord.gg/2FfPeEk2mX
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Lama Dev Youtube Channel](https://youtube.com/lamadev) 
+- [Next.js](https://nextjs.org/learn)
