@@ -43,7 +43,7 @@ const page = () => {
             <td>Stock</td>
             <td>
               <div className={styles.buttons}>
-                <Link href={`/dashboard/users/`}>
+                <Link href={`/dashboard/products/1`}>
                   <button className={`${styles.button} ${styles.view}`}>
                     View
                   </button>

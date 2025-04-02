@@ -1,9 +1,19 @@
-
+'use client';
 import React from 'react'
 import styles from "./search.module.css";
 import { MdSearch } from 'react-icons/md';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 const Search = ({ placeholder }) => {
+  const searchParams = useSearchParams();
+  const pathName = usePathname();
+  const { replace } = useRouter();
+
+  const hadleSearch = (e) =>{
+    const params = new URLSearchParams(searchParams);
+    params.set("q",e.target.value);
+    replace(`${pathName}?${params}`)
+  }
   return (
     <div className={styles.container}>
       <MdSearch />
@@ -11,7 +21,7 @@ const Search = ({ placeholder }) => {
         type="text"
         placeholder={placeholder}
         className={styles.input}
-        // onChange={handleSearch}
+        onChange={hadleSearch}
       />
     </div>
   )
