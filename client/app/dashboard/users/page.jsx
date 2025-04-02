@@ -45,7 +45,7 @@ const Users = () => {
             <td>Status</td>
             <td>
               <div className={styles.buttons}>
-                <Link href={`/dashboard/users/`}>
+                <Link href={`/dashboard/users/1`}>
                   <button className={`${styles.button} ${styles.view}`}>
                     View
                   </button>
