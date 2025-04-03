@@ -2,7 +2,7 @@ import { Product, User } from "./models";
 import { connectToDB } from "./utils";
 
 export const fetchUsers = async (q, page) => {
-  const regex = new RegExp(q, "i");
+  const regex = new RegExp(q, "i");//i means it is case insensitive
 
   const ITEM_PER_PAGE = 2;
 
